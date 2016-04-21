@@ -1,0 +1,4 @@
+SSHGUARD_OPTS="-b 60:/var/db/sshguard/blacklist.db"
+# Limit journalctl output to the sshd unit to avoid the attack of local users adding fake logs.
+# This works better than using sshguard's -f option.
+JOURNALCTL_OPTS="-u sshd"

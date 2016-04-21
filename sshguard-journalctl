@@ -1,0 +1,2 @@
+#!/bin/sh
+LANG=C /usr/bin/journalctl -afb -p info -n0 -o cat $JOURNALCTL_OPTS | /usr/sbin/sshguard $SSHGUARD_OPTS
