@@ -1,4 +1,6 @@
-# Whitelist localhost address and all 127.0.0.1 block
+# Sshguard Whitelist
+#
+# See the WHITELISTING section in SSHGUARD(8) for more details.
 
-# Address blocks in CIDR notation
 127.0.0.0/8
+::1
