@@ -32,9 +32,9 @@ make %{_smp_mflags}
 install -d %{buildroot}%{_unitdir}
 install -m 0644 %{SOURCE1} %{buildroot}%{_unitdir}/sshguard.service
 install -d %{buildroot}/%{_sysconfdir}/sysconfig
-install -m 0644 %{SOURCE2} %{buildroot}/%{_sysconfdir}/sysconfig/sshguard
+install -m 0600 %{SOURCE2} %{buildroot}/%{_sysconfdir}/sysconfig/sshguard
 install -d %{buildroot}/%{_sysconfdir}/sshguard
-install -m 0644 %{SOURCE3} %{buildroot}/%{_sysconfdir}/sshguard/whitelist
+install -m 0600 %{SOURCE3} %{buildroot}/%{_sysconfdir}/sshguard/whitelist
 install -d %{buildroot}/%_localstatedir/db/sshguard
 install -d %{buildroot}/%{_libexecdir}/sshguard
 install -m 0755 %{SOURCE4} %{buildroot}/%{_libexecdir}/sshguard/sshguard-journalctl
