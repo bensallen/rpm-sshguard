@@ -1,7 +1,7 @@
 # sshguard.service -- sample systemd unit file
 
 [Unit]
-Description=Intelligently block brute-force attacks by aggregating system logs
+Description=SSHGuard brute-force protection
 After=syslog.target
 After=iptables.target
 After=ip6tables.target
@@ -10,8 +10,6 @@ After=firewalld.service
 
 [Service]
 EnvironmentFile=/etc/sysconfig/sshguard
-ExecStartPre=-/usr/sbin/iptables -N sshguard
-ExecStartPre=-/usr/sbin/ip6tables -N sshguard
 ExecStart=/usr/libexec/sshguard/sshguard-journalctl
 Restart=always
 
