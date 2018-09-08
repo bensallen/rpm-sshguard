@@ -1,5 +1,5 @@
 Name:		sshguard
-Version:	1.6.3
+Version:	2.2.0
 Release:	1
 License:	GPLv2+
 Summary:	Protect hosts from brute force attacks against ssh
@@ -61,14 +61,20 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %{_sbindir}/sshguard
 %{_libexecdir}/sshguard/sshguard-journalctl
+%{_libexecdir}/sshg-*
 %{_unitdir}/sshguard.service
 %config %{_sysconfdir}/sysconfig/sshguard
 %config %{_sysconfdir}/sshguard/whitelist
 %_localstatedir/db/sshguard
-%doc ChangeLog README.rst examples/
+%doc CHANGELOG.rst README.rst examples/
 %doc %{_mandir}/man8/%{name}*
+%doc %{_mandir}/man7/%{name}*
 
 %changelog
+* Sat Sep 08 2018 Ron Valente <ronald.valente@gmail.com> 2.2.0-1
+- Upgrade to 2.2.0 Release of SSHGuard
+- Added CHANGELOG.rst to doc
+- Added man7 for sshguard-setup7
+- Added sshg-* to libexec
 * Wed Apr 20 2016 Ben Allen <bsallen@alcf.anl.gov> 1.6.3-1
 - Initial release (v1.6.3)
-
