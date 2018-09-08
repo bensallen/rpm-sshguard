@@ -23,8 +23,7 @@ attacker's address with a firewall rule.
 %setup -q
 
 %build
-%configure \
-  --with-firewall=iptables
+%configure
 make %{_smp_mflags}
 
 %install
@@ -76,5 +75,6 @@ rm -rf %{buildroot}
 - Added CHANGELOG.rst to doc
 - Added man7 for sshguard-setup7
 - Added sshg-* to libexec
+- Removed --with-firewall option, no longer used
 * Wed Apr 20 2016 Ben Allen <bsallen@alcf.anl.gov> 1.6.3-1
 - Initial release (v1.6.3)
